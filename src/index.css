@@ -1,0 +1,206 @@
+:root {
+  --bg: #0a0e17;
+  --surface: #0f141f;
+  --card: #141b2e;
+  --card-hover: #1a2338;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-focus: rgba(255, 255, 255, 0.14);
+
+  --text: rgba(255, 255, 255, 0.95);
+  --muted: rgba(255, 255, 255, 0.68);
+  --subtle: rgba(255, 255, 255, 0.42);
+
+  --brand: #ff4d32;
+  --brand-hover: #ff6549;
+  --accent: #00d4ff;
+  --accent-hover: #1ee0ff;
+  --good: #00f5a0;
+  --warn: #ffb800;
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.24);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.36);
+  --shadow-glow: 0 0 24px rgba(255, 77, 50, 0.18);
+
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'SF Pro Display',
+    'Segoe UI',
+    system-ui,
+    sans-serif;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--brand-hover);
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 77, 50, 0.3);
+  color: var(--text);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Prevent text size adjust on iOS */
+@supports (-webkit-touch-callout: none) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Safe area support for notches */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}
+
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: 
+    radial-gradient(ellipse 1400px 700px at 50% -5%, rgba(0, 212, 255, 0.04), transparent 65%),
+    radial-gradient(ellipse 1000px 600px at 100% 25%, rgba(255, 77, 50, 0.05), transparent 60%),
+    radial-gradient(ellipse 800px 500px at 0% 70%, rgba(0, 245, 160, 0.03), transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, #080c14 100%);
+  background-attachment: fixed;
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(232, 74, 52, 0.25);
+}
+
+/* Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Mobile-first container with desktop fallback */
+.appFrame {
+  min-height: 100dvh;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: var(--safe-top);
+}
+
+@media (min-width: 768px) {
+  .appFrame {
+    max-width: 430px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), var(--shadow-lg);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 20px;
+  }
+}

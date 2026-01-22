@@ -1,0 +1,120 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  width: 100%;
+  position: relative;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  padding-top: calc(var(--safe-top) + 16px);
+  background: rgba(15, 20, 31, 0.98);
+  border-bottom: 1px solid var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.screen-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.screen-action {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.screen-content {
+  flex: 1;
+  overflow-y: visible;
+  width: 100%;
+  padding-top: 80px; /* Más espacio para evitar solapamiento */
+}
+
+/* Desktop - Ajuste para sidebar */
+@media (min-width: 1024px) {
+  .screen-header {
+    left: 280px; /* Ancho del sidebar */
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .sidebar-collapsed ~ .app-main .screen-header {
+    left: 80px;
+  }
+
+  .screen-content {
+    padding-top: 90px; /* Más espacio en desktop */
+  }
+
+  .screen-title {
+    font-size: 28px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .screen-header {
+    padding: 20px 32px;
+    padding-top: calc(var(--safe-top) + 20px);
+  }
+  
+  .screen-title {
+    font-size: 28px;
+  }
+  
+  .screen-content {
+    padding-top: 84px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .screen {
+    max-width: 100%;
+  }
+  
+  .screen-content {
+    padding-top: 88px;
+  }
+  
+  .screen-header {
+    padding: 24px 40px;
+    padding-top: calc(var(--safe-top) + 24px);
+  }
+  
+  .screen-title {
+    font-size: 32px;
+  }
+  
+  .screen-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .screen-header {
+    padding: 24px 60px;
+  }
+  
+  .screen-content {
+    max-width: 1400px;
+  }
+}

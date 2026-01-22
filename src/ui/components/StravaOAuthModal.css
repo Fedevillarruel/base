@@ -1,0 +1,253 @@
+/* Strava OAuth Modal */
+.oauth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.oauth-modal {
+  background: linear-gradient(180deg, #12161f 0%, #0a0e17 100%);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUpScale 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes slideUpScale {
+  from { 
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.oauth-modal-header {
+  position: relative;
+  padding: 32px 32px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oauth-modal-logo {
+  width: 140px;
+  height: 48px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.oauth-strava-logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.oauth-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oauth-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  transform: rotate(90deg);
+}
+
+.oauth-close-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.oauth-modal-content {
+  padding: 32px;
+}
+
+.oauth-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.oauth-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  color: rgba(252, 82, 0, 0.8);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.oauth-info-box {
+  background: linear-gradient(135deg, 
+    rgba(252, 82, 0, 0.08) 0%,
+    rgba(252, 82, 0, 0.04) 100%
+  );
+  border: 1px solid rgba(252, 82, 0, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.oauth-info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(252, 82, 0, 0.15), rgba(252, 82, 0, 0.08));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fc5200;
+}
+
+.oauth-info-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+}
+
+.oauth-info-text {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.oauth-features {
+  margin-bottom: 28px;
+}
+
+.oauth-features-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: -0.2px;
+}
+
+.oauth-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.oauth-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.oauth-feature-item svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: #10b981;
+  stroke-width: 2.5;
+}
+
+.oauth-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #fc5200 0%, #e34800 100%);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 16px rgba(252, 82, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.3px;
+}
+
+.oauth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(252, 82, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.oauth-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .oauth-modal {
+    border-radius: 20px;
+  }
+  
+  .oauth-modal-header {
+    padding: 24px 24px 20px;
+  }
+  
+  .oauth-modal-content {
+    padding: 24px;
+  }
+  
+  .oauth-title {
+    font-size: 20px;
+  }
+  
+  .oauth-info-box {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .oauth-info-icon {
+    width: 36px;
+    height: 36px;
+  }
+}

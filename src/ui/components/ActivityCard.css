@@ -1,0 +1,210 @@
+.activity-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.activity-card:hover {
+  border-color: var(--border-focus);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.activity-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.activity-card-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.activity-card-name {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.activity-card-time {
+  font-size: 13px;
+  color: var(--subtle);
+  margin-top: 2px;
+}
+
+.activity-card-sport {
+  font-size: 24px;
+}
+
+.activity-sport-emoji {
+  display: block;
+}
+
+.activity-card-photo {
+  position: relative;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.activity-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.activity-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.activity-card-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.activity-stat {
+  text-align: center;
+}
+
+.activity-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.activity-stat-label {
+  font-size: 12px;
+  color: var(--subtle);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.activity-card-effort {
+  padding: 0 16px 12px;
+}
+
+.activity-card-note {
+  padding: 0 16px 16px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.activity-card-actions {
+  display: flex;
+  gap: 16px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.activity-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.activity-action:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.activity-action-liked {
+  color: var(--brand);
+}
+
+.activity-action-icon {
+  font-size: 18px;
+}
+
+.activity-action-count {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .activity-card-header {
+    padding: 20px;
+  }
+  
+  .activity-card-stats {
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .activity-card-photo {
+    aspect-ratio: 2/1;
+  }
+  
+  .activity-stat-value {
+    font-size: 22px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .activity-card {
+    max-width: 100%;
+  }
+  
+  .activity-card-header {
+    padding: 24px;
+  }
+  
+  .activity-card-title {
+    font-size: 24px;
+  }
+  
+  .activity-card-stats {
+    padding: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .activity-stat-value {
+    font-size: 24px;
+  }
+  
+  .activity-stat-label {
+    font-size: 13px;
+  }
+  
+  .activity-card-note {
+    font-size: 16px;
+  }
+  
+  .activity-action {
+    padding: 10px 16px;
+  }
+  
+  .activity-action-icon {
+    font-size: 20px;
+  }
+}

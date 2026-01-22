@@ -1,0 +1,182 @@
+/* Strava Banner */
+.strava-banner {
+  position: relative;
+  background: linear-gradient(135deg, 
+    rgba(252, 82, 0, 0.08) 0%, 
+    rgba(252, 82, 0, 0.04) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border: 1px solid rgba(252, 82, 0, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.strava-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(252, 82, 0, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.strava-banner-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+
+.strava-banner-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  transform: rotate(90deg);
+}
+
+.strava-banner-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.strava-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.strava-banner-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.strava-logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.strava-banner-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.strava-banner-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: -0.3px;
+}
+
+.strava-banner-description {
+  font-size: 13px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.4;
+}
+
+.strava-banner-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #fc5200 0%, #e34800 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 2px 8px rgba(252, 82, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.strava-banner-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 16px rgba(252, 82, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.strava-banner-cta:active {
+  transform: translateY(0);
+}
+
+.strava-banner-cta svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.5;
+}
+
+/* Tablet & Desktop */
+@media (min-width: 640px) {
+  .strava-banner {
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .strava-banner-content {
+    gap: 20px;
+  }
+  
+  .strava-banner-icon {
+    width: 64px;
+    height: 64px;
+    padding: 14px;
+  }
+  
+  .strava-banner-title {
+    font-size: 17px;
+  }
+  
+  .strava-banner-description {
+    font-size: 14px;
+  }
+  
+  .strava-banner-cta {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile - Stack on very small screens */
+@media (max-width: 380px) {
+  .strava-banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .strava-banner-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}

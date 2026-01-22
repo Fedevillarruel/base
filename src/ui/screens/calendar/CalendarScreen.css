@@ -1,0 +1,277 @@
+.calendar-container {
+  padding: 0 0 80px;
+}
+
+.week-view,
+.day-view {
+  padding: 0 20px;
+}
+
+.icon-btn-small {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.icon-btn-small:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.week-view {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.day-column {
+  background: var(--card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.day-header {
+  padding: 12px 8px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--border);
+}
+
+.day-name {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--subtle);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.day-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.day-workouts {
+  padding: 8px;
+  min-height: 100px;
+}
+
+.workout-mini {
+  padding: 8px;
+  background: rgba(255, 77, 50, 0.1);
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+
+.workout-time {
+  display: block;
+  color: var(--brand);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.workout-title {
+  display: block;
+  color: var(--text);
+}
+
+.day-view {
+  margin-top: 20px;
+}
+
+.day-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 20px;
+  text-transform: capitalize;
+}
+
+.empty-day {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 48px;
+  opacity: 0.3;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.empty-day p {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.workouts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.workout-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.workout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.workout-time-badge {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+}
+
+.workout-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.workout-desc {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.workout-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--subtle);
+}
+
+/* Mobile - smaller grid */
+@media (max-width: 480px) {
+  .week-view {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+  .week-view {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .calendar-container {
+    padding: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .week-view {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+  }
+
+  .day-header {
+    padding: 14px 10px;
+  }
+
+  .day-name {
+    font-size: 12px;
+  }
+
+  .day-number {
+    font-size: 20px;
+  }
+
+  .day-workouts {
+    min-height: 120px;
+  }
+
+  .workout-mini {
+    font-size: 12px;
+  }
+
+  .empty-icon {
+    font-size: 56px;
+  }
+
+  .workouts-list {
+    gap: 16px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .calendar-container {
+    padding: 48px;
+    max-width: 1400px;
+  }
+
+  .week-view {
+    gap: 16px;
+  }
+
+  .day-header {
+    padding: 16px 12px;
+  }
+
+  .day-name {
+    font-size: 13px;
+  }
+
+  .day-number {
+    font-size: 22px;
+  }
+
+  .day-workouts {
+    padding: 12px;
+    min-height: 150px;
+  }
+
+  .workout-mini {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .day-title {
+    font-size: 22px;
+  }
+
+  .workout-name {
+    font-size: 18px;
+  }
+
+  .workout-desc {
+    font-size: 15px;
+  }
+
+  .workout-meta {
+    font-size: 14px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .calendar-container {
+    max-width: 1600px;
+    padding: 0 0 80px;
+  }
+
+  .week-view {
+    gap: 20px;
+  }
+}

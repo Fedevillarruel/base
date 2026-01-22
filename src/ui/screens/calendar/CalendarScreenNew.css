@@ -1,0 +1,2912 @@
+/* Calendar Container */
+.calendar-container {
+  padding: 0 0 80px;
+}
+
+/* Modern Header */
+.calendar-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.calendar-main-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.calendar-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.calendar-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* View Switcher - Ultra Modern */
+.calendar-view-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.view-switch-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-switch-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.view-switch-btn.active {
+  background: linear-gradient(135deg, #ff4d32, #ff2610);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 77, 50, 0.3);
+}
+
+/* Add Button */
+.calendar-add-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: linear-gradient(135deg, #ff4d32, #ff2610);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 77, 50, 0.3);
+}
+
+.calendar-add-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 77, 50, 0.4);
+}
+
+.calendar-add-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+
+/* Banners - Ultra Modernos */
+.calendar-banner {
+  position: relative;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 0 20px 16px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.calendar-banner:hover {
+  transform: translateY(-2px);
+}
+
+.calendar-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.pro-banner {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.08));
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.15);
+}
+
+.coach-banner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.08));
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.15);
+}
+
+.banner-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgba(255, 255, 255, 0.6);
+  z-index: 2;
+}
+
+.banner-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg) scale(1.05);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.banner-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.banner-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.banner-icon {
+  font-size: 32px;
+  animation: bannerIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes bannerIconFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.banner-text {
+  flex: 1;
+}
+
+.banner-text h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.98);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.banner-text p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.banner-cta {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
+}
+
+.banner-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.45);
+}
+
+.banner-cta.coach-cta {
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+}
+
+.banner-cta.coach-cta:hover {
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45);
+}
+
+.banner-cta svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.5;
+}
+
+/* Week View */
+.week-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.week-view * {
+  box-sizing: border-box;
+}
+
+/* Day Calendar View */
+.day-calendar-view {
+  padding: 20px;
+}
+
+.day-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.day-nav-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.day-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.day-date-info {
+  text-align: center;
+}
+
+.day-weekday {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.day-date-text {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: -0.3px;
+}
+
+.day-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  border: 2px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: rgba(255, 77, 50, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-icon svg {
+  width: 32px;
+  height: 32px;
+  color: rgba(255, 77, 50, 0.7);
+  stroke-width: 1.5;
+}
+
+.day-empty-state h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px;
+}
+
+.day-empty-state p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 15px;
+  margin: 0 0 24px;
+}
+
+.add-workout-btn {
+  background: linear-gradient(135deg, #ff4d32, #ff2610);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 77, 50, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-workout-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 77, 50, 0.35);
+}
+
+.add-workout-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.day-workouts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.day-workout-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.day-workout-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.day-workout-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.day-workout-time {
+  background: rgba(255, 77, 50, 0.15);
+  color: #ff4d32;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.day-workout-status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.day-workout-status.completed {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.day-workout-status.pending {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.day-workout-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 8px;
+}
+
+.day-workout-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.day-workout-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.day-workout-stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.day-workout-stat-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.day-complete-btn {
+  width: 100%;
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.day-complete-btn:hover {
+  background: rgba(34, 197, 94, 0.25);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* Month View */
+.month-view {
+  padding: 20px;
+}
+
+.month-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.month-weekday {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 4px;
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.month-weekday-header {
+  display: none;
+}
+
+.month-day {
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 6px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.month-day:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: scale(1.02);
+}
+
+.month-day.today {
+  border-color: rgba(255, 77, 50, 0.6);
+  background: linear-gradient(135deg, rgba(255, 77, 50, 0.12), rgba(255, 77, 50, 0.04));
+}
+
+.month-day.other-month {
+  opacity: 0.3;
+}
+
+.month-day-number {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 4px;
+}
+
+.month-day.today .month-day-number {
+  color: #ff4d32;
+}
+
+.month-day-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-height: 0;
+}
+
+.workout-indicator {
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.month-day-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 4px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.month-overflow {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Year View */
+.year-view {
+  padding: 20px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.year-view * {
+  box-sizing: border-box;
+}
+
+.year-summary h3 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.year-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.year-stat-card {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: 12px;
+  row-gap: 2px;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.year-stat-icon {
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.86);
+  grid-row: span 2;
+}
+
+.year-stat-value {
+  font-size: 18px;
+  font-weight: 850;
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin-top: 2px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.year-stat-label {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  opacity: 0.85;
+  min-width: 0;
+}
+
+.year-summary {
+  display: block;
+}
+
+/* --- Month view layout fixes (mobile) --- */
+.month-view {
+  padding: 20px;
+  width: 100%;
+}
+
+.month-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.month-weekday {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 6px 0;
+}
+
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.month-day {
+  aspect-ratio: 1 / 1;
+  min-height: 44px;
+  border-radius: 12px;
+}
+
+.month-day-number {
+  font-size: 13px;
+}
+
+.year-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.year-stat-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.year-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.year-stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: -1px;
+}
+
+.year-stat-unit {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 4px;
+}
+
+.year-charts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.year-chart {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.year-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.year-chart-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: -0.2px;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ff4d32;
+}
+
+.legend-color.km {
+  background: #ff4d32;
+}
+
+.legend-color.hours {
+  background: #8b5cf6;
+}
+
+.year-chart {
+  width: 100%;
+  overflow: hidden;
+}
+
+.year-chart {
+  overflow-x: auto;
+}
+
+.year-chart::-webkit-scrollbar {
+  height: 6px;
+}
+
+.year-chart::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.year-chart-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
+  height: 160px;
+  padding: 6px 6px 2px;
+  min-width: 520px;
+}
+
+.year-chart-bar-wrapper {
+  flex: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 32px;
+}
+
+.year-chart-bar {
+  width: 100%;
+  min-height: 4px;
+  background: linear-gradient(180deg, #ff4d32, #ff2610);
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.year-chart-bar.hours {
+  background: linear-gradient(180deg, #a78bfa, #7c3aed);
+}
+
+.year-chart-bar:hover {
+  filter: brightness(1.2);
+  transform: scaleY(1.02);
+}
+
+.year-chart-bar-value {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.year-chart-bar:hover .year-chart-bar-value {
+  opacity: 1;
+}
+
+.year-chart-month {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+}
+
+.year-detail-table {
+  margin-top: 18px;
+}
+
+/* Year cards */
+.year-chart-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 14px;
+}
+
+.year-chart-card:last-of-type {
+  margin-bottom: 0;
+}
+
+.year-summary {
+  gap: 14px;
+}
+
+.year-stats-grid {
+  gap: 12px;
+}
+
+.year-stat-card {
+  padding: 12px;
+  border-radius: 16px;
+}
+
+@media (max-width: 420px) {
+  .year-stat-card {
+    grid-template-columns: 40px 1fr;
+    padding: 10px;
+  }
+
+  .year-stat-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+  }
+
+  .year-stat-value {
+    font-size: 17px;
+  }
+}
+
+.year-detail-table h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 850;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.detail-table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.detail-table .table-header,
+.detail-table .table-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 0.9fr 0.9fr;
+  gap: 0;
+  min-width: 520px;
+}
+
+.detail-table .table-header {
+  position: sticky;
+  top: 0;
+  background: rgba(10, 14, 23, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-table .table-cell {
+  padding: 10px 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.detail-table .table-header .table-cell {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.detail-table .table-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-table .table-row:last-child {
+  border-bottom: 0;
+}
+
+.detail-table .table-cell.month {
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (min-width: 640px) {
+  .year-charts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .year-chart-bars {
+    min-width: 0;
+  }
+
+  .year-chart-bar-wrapper {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.year-details {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.year-details h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 16px;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.detail-table thead th {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-table tbody td {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.detail-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.detail-table tbody td:first-child {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.day-column {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.day-column:hover {
+  border-color: rgba(255, 77, 50, 0.3);
+  transform: translateY(-2px);
+}
+
+.day-column.today {
+  border-color: rgba(255, 77, 50, 0.5);
+  background: linear-gradient(135deg, rgba(255, 77, 50, 0.08), rgba(255, 77, 50, 0.02));
+}
+
+.day-header {
+  padding: 10px 6px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.day-name {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.day-number {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.day-column.today .day-number {
+  color: #ff4d32;
+}
+
+.day-workouts {
+  padding: 6px;
+  min-height: 80px;
+}
+
+.day-empty {
+  text-align: center;
+  padding: 20px 6px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.workout-mini {
+  padding: 6px;
+  background: rgba(255, 77, 50, 0.1);
+  border: 1px solid rgba(255, 77, 50, 0.2);
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 10px;
+  position: relative;
+}
+
+.workout-mini.completed {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.workout-time {
+  display: block;
+  color: #ff4d32;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.workout-mini.completed .workout-time {
+  color: #10b981;
+}
+
+.workout-title {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.workout-check {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: white;
+}
+
+/* Goals View */
+.goals-view {
+  padding: 0 20px;
+}
+
+.goals-header {
+  margin: 20px 0;
+}
+
+.goals-header h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 6px 0;
+}
+
+.goals-header p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.goal-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.goal-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.goal-card.completed {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+}
+
+.goal-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.goal-content {
+  flex: 1;
+}
+
+.goal-content h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px 0;
+}
+
+.goal-stats {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.goal-current {
+  font-size: 22px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.goal-separator {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.goal-target {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.goal-progress-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.goal-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.goal-percentage {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.goal-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.goal-badge svg {
+  width: 14px;
+  height: 14px;
+  color: white;
+  stroke-width: 3;
+}
+
+/* Events */
+.goals-events {
+  margin-top: 32px;
+}
+
+.goals-events h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 16px 0;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-card {
+  background: linear-gradient(135deg, rgba(255, 77, 50, 0.08), rgba(255, 77, 50, 0.02));
+  border: 1px solid rgba(255, 77, 50, 0.2);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.event-date {
+  background: linear-gradient(135deg, #ff4d32, #ff2610);
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(255, 77, 50, 0.3);
+}
+
+.event-day {
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}
+
+.event-month {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-info h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 4px 0;
+}
+
+.event-info p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.event-countdown {
+  flex-shrink: 0;
+}
+
+.event-countdown span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff4d32;
+  background: rgba(255, 77, 50, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 77, 50, 0.2);
+}
+
+/* Stats View */
+.stats-view {
+  padding: 0 20px;
+}
+
+.stats-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ff4d32;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.stats-chart-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.stats-chart-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 20px 0;
+}
+
+.weekly-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 180px;
+  gap: 6px;
+}
+
+.chart-bar-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.chart-bar-wrapper {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.chart-bar {
+  width: 100%;
+  min-height: 4px;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.chart-value {
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.chart-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+/* Stats Distribution */
+.stats-distribution {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.stats-distribution h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 16px 0;
+}
+
+.sport-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sport-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sport-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sport-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sport-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sport-bar-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sport-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Records */
+.stats-records {
+  margin-bottom: 24px;
+}
+
+.stats-records h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 16px 0;
+}
+
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.record-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+}
+
+.record-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.record-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ff4d32;
+  margin-bottom: 4px;
+}
+
+.record-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.record-date {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* AI View */
+.ai-view {
+  padding: 0 20px;
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(255, 77, 50, 0.08), rgba(255, 77, 50, 0.02));
+  border: 1px solid rgba(255, 77, 50, 0.2);
+  border-radius: 16px;
+}
+
+.ai-avatar {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.ai-avatar-icon {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff4d32, #ff2610);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 16px rgba(255, 77, 50, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.ai-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #ff4d32;
+  animation: aiPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes aiPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+.ai-intro h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 4px 0;
+}
+
+.ai-intro p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.ai-analysis-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.ai-analysis-card.main-analysis {
+  border-color: rgba(255, 77, 50, 0.3);
+  background: linear-gradient(135deg, rgba(255, 77, 50, 0.06), rgba(255, 77, 50, 0.02));
+}
+
+.ai-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ai-badge {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, rgba(255, 77, 50, 0.2), rgba(255, 77, 50, 0.1));
+  border: 1px solid rgba(255, 77, 50, 0.3);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ff4d32;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ai-timestamp {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.ai-content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 12px 0;
+}
+
+.ai-insight {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 20px 0;
+}
+
+.ai-insight strong {
+  color: #ff4d32;
+  font-weight: 700;
+}
+
+.ai-recommendations h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 12px 0;
+}
+
+.ai-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ai-list li {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ai-bullet {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.ai-list li strong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
+}
+
+.ai-progress-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ai-metric {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ai-metric-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.ai-metric-icon.good {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.1));
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.ai-metric-icon.warning {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1));
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.ai-metric-icon.info {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.1));
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.ai-metric-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-metric-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.ai-metric-value {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+}
+
+.ai-note {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border-left: 3px solid rgba(255, 77, 50, 0.5);
+}
+
+.ai-suggested-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.suggested-workout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.suggested-workout:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 77, 50, 0.2);
+}
+
+.suggested-day {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(255, 77, 50, 0.15), rgba(255, 77, 50, 0.05));
+  border: 1px solid rgba(255, 77, 50, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ff4d32;
+  flex-shrink: 0;
+}
+
+.suggested-content {
+  flex: 1;
+}
+
+.suggested-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3px;
+}
+
+.suggested-details {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ai-apply-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #ff4d32, #ff2610);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(255, 77, 50, 0.3);
+}
+
+.ai-apply-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 77, 50, 0.4);
+}
+
+.ai-apply-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ai-alerts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ai-alert {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ai-alert.warning {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ai-alert.tip {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ai-alert-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.ai-alert-content strong {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .calendar-container {
+    padding: 0 0 80px;
+  }
+
+  .calendar-banner {
+    margin: 0 32px 20px;
+    padding: 20px;
+  }
+
+  .banner-icon {
+    font-size: 32px;
+  }
+
+  .banner-text h4 {
+    font-size: 16px;
+  }
+
+  .banner-text p {
+    font-size: 14px;
+  }
+
+  .week-view,
+  .goals-view,
+  .stats-view,
+  .ai-view {
+    padding: 0 32px;
+  }
+
+  .goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stats-summary {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .ai-progress-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .calendar-container {
+    padding: 0 0 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .calendar-banner {
+    margin: 0 48px 24px;
+  }
+
+  .week-view,
+  .goals-view,
+  .stats-view,
+  .ai-view {
+    padding: 0 48px;
+  }
+
+  .week-view {
+    gap: 12px;
+  }
+
+  .day-header {
+    padding: 12px 8px;
+  }
+
+  .day-name {
+    font-size: 11px;
+  }
+
+  .day-number {
+    font-size: 18px;
+  }
+
+  .day-workouts {
+    min-height: 100px;
+  }
+
+  .goals-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .records-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .calendar-container {
+    max-width: 1600px;
+  }
+
+  .week-view {
+    gap: 16px;
+  }
+}
+
+/* Responsive - Tablet */
+@media (min-width: 640px) {
+  .calendar-main-title {
+    font-size: 26px;
+  }
+
+  .calendar-subtitle {
+    font-size: 14px;
+  }
+
+  .calendar-view-switcher {
+    gap: 6px;
+    padding: 5px;
+  }
+
+  .view-switch-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .day-calendar-view,
+  .month-view,
+  .year-view {
+    padding: 32px;
+  }
+
+  .day-nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .day-weekday {
+    font-size: 12px;
+  }
+
+  .day-date-text {
+    font-size: 20px;
+  }
+
+  .day-workout-card {
+    padding: 20px;
+  }
+
+  .day-workout-title {
+    font-size: 18px;
+  }
+
+  .month-grid {
+    gap: 8px;
+  }
+
+  .month-weekday-header {
+    font-size: 12px;
+    padding: 10px 4px;
+  }
+
+  .month-day {
+    padding: 8px;
+  }
+
+  .month-day-number {
+    font-size: 14px;
+  }
+
+  .workout-indicator {
+    font-size: 11px;
+    padding: 3px 5px;
+  }
+
+  .year-summary {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .year-stat-card {
+    padding: 20px;
+  }
+
+  .year-stat-value {
+    font-size: 28px;
+  }
+
+  .year-charts {
+    gap: 20px;
+  }
+
+  .year-chart {
+    padding: 24px;
+  }
+
+  .year-chart-bars {
+    height: 200px;
+    gap: 8px;
+  }
+
+  .year-chart-bar {
+    border-radius: 6px 6px 0 0;
+  }
+
+  .year-chart-month {
+    font-size: 10px;
+  }
+}
+
+/* Responsive - Desktop */
+@media (min-width: 1024px) {
+  .calendar-main-title {
+    font-size: 28px;
+  }
+
+  .calendar-subtitle {
+    font-size: 15px;
+  }
+
+  .calendar-view-switcher {
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .view-switch-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .calendar-add-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .day-calendar-view,
+  .month-view,
+  .year-view {
+    padding: 48px;
+  }
+
+  .day-calendar-header {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+  }
+
+  .day-nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .day-weekday {
+    font-size: 13px;
+  }
+
+  .day-date-text {
+    font-size: 22px;
+  }
+
+  .day-workouts-list {
+    gap: 16px;
+  }
+
+  .day-workout-card {
+    padding: 24px;
+  }
+
+  .day-workout-title {
+    font-size: 19px;
+  }
+
+  .day-workout-stats {
+    gap: 24px;
+  }
+
+  .month-grid {
+    gap: 10px;
+  }
+
+  .month-weekday-header {
+    font-size: 13px;
+    padding: 12px 4px;
+  }
+
+  .month-day {
+    padding: 10px;
+  }
+
+  .month-day-number {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .workout-indicator {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  .month-day-badge {
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+
+  .year-summary {
+    margin-bottom: 32px;
+  }
+
+  .year-stat-value {
+    font-size: 32px;
+  }
+
+  .year-chart-title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .year-chart-bars {
+    height: 220px;
+    gap: 10px;
+  }
+
+  .year-chart-bar-value {
+    font-size: 11px;
+  }
+
+  .detail-table thead th {
+    font-size: 12px;
+    padding: 12px 16px;
+  }
+
+  .detail-table tbody td {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+}
+
+/* Mobile - Stack year charts */
+@media (max-width: 639px) {
+  .year-charts {
+    grid-template-columns: 1fr;
+  }
+
+  .year-chart-bars {
+    gap: 4px;
+  }
+
+  .detail-table {
+    font-size: 11px;
+  }
+
+  .detail-table thead th,
+  .detail-table tbody td {
+    padding: 8px 6px;
+  }
+}
+
+/* Week View - Mejorada */
+.week-view-header {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.week-view-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.week-summary {
+  display: flex;
+  gap: 20px;
+}
+
+.week-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.week-stat-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ff4d32;
+  line-height: 1;
+}
+
+.week-stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  padding: 0 20px;
+}
+
+.today-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: linear-gradient(135deg, #ff4d32, #ff2610);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 6px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(255, 77, 50, 0.4);
+}
+
+.workout-mini-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.workout-check {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #10b981;
+  stroke-width: 2.5;
+}
+
+.workout-pending {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: rgba(251, 191, 36, 0.7);
+  stroke-width: 2;
+}
+
+.workout-sport-badge {
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workout-sport-badge svg {
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 77, 50, 0.8);
+  stroke-width: 2;
+}
+
+.workout-mini.completed .workout-sport-badge svg {
+  color: rgba(16, 185, 129, 0.8);
+}
+
+.day-empty {
+  text-align: center;
+  padding: 24px 8px;
+  border: 2px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.day-empty:hover {
+  border-color: rgba(255, 77, 50, 0.3);
+  background: rgba(255, 77, 50, 0.05);
+}
+
+.day-empty svg {
+  width: 20px;
+  height: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  stroke-width: 2;
+}
+
+.day-empty:hover svg {
+  color: rgba(255, 77, 50, 0.5);
+}
+
+/* Goals View - Ultra Mejorada */
+.goals-header {
+  padding: 0 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.goals-header-left {
+  flex: 1;
+}
+
+.goals-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.5px;
+}
+
+.goals-title-icon {
+  font-size: 26px;
+  filter: drop-shadow(0 2px 8px rgba(255, 77, 50, 0.3));
+}
+
+.goals-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.goals-header-right {
+  flex-shrink: 0;
+}
+
+.goals-completion-badge {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.08));
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.completion-count {
+  font-size: 24px;
+  font-weight: 900;
+  color: #22c55e;
+  line-height: 1;
+}
+
+.completion-total {
+  font-size: 16px;
+  color: rgba(34, 197, 94, 0.7);
+  font-weight: 700;
+}
+
+.completion-label {
+  font-size: 11px;
+  color: rgba(34, 197, 94, 0.8);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+}
+
+.goal-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.goal-completed-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #22c55e, #10b981);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  animation: completedPulse 2s ease-in-out infinite;
+}
+
+@keyframes completedPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.goal-completed-badge svg {
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+
+.goal-title-text {
+  font-size: 15px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Events - Mejorado */
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.events-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.events-icon {
+  font-size: 22px;
+}
+
+.events-add-btn {
+  background: rgba(255, 77, 50, 0.12);
+  border: 1px solid rgba(255, 77, 50, 0.25);
+  color: #ff4d32;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.events-add-btn:hover {
+  background: rgba(255, 77, 50, 0.2);
+  border-color: rgba(255, 77, 50, 0.4);
+  transform: translateY(-1px);
+}
+
+.events-add-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.event-date-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 77, 50, 0.15), rgba(255, 77, 50, 0.08));
+  border: 1px solid rgba(255, 77, 50, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.event-date-badge.secondary {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.08));
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.event-name {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.event-detail {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.event-detail svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
+  color: rgba(255, 77, 50, 0.7);
+  flex-shrink: 0;
+}
+
+.countdown-value {
+  font-size: 28px;
+  font-weight: 900;
+  color: #ff4d32;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+
+/* Day View Workout Cards - Mejorado */
+.workout-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.workout-time-badge {
+  background: rgba(255, 77, 50, 0.1);
+  border: 1px solid rgba(255, 77, 50, 0.2);
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff4d32;
+}
+
+.workout-time-badge svg {
+  width: 16px;
+  height: 16px;
+  color: #ff4d32;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.workout-status-badge {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.workout-status-badge.completed {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #22c55e;
+}
+
+.workout-status-badge.pending {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: #fbbf24;
+}
+
+.workout-status-badge svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5;
+  flex-shrink: 0;
+}
+
+.workout-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.workout-card-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.workout-card-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.workout-stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workout-stat .stat-icon {
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 77, 50, 0.7);
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.workout-stat .stat-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.complete-workout-btn {
+  width: 100%;
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.complete-workout-btn:hover {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: rgba(34, 197, 94, 0.35);
+  transform: translateY(-1px);
+}
+
+.day-workout-card.completed {
+  opacity: 0.7;
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.day-workout-card.completed::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #22c55e, #10b981);
+  border-radius: 14px 0 0 14px;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .workout-card-header {
+    margin-bottom: 16px;
+  }
+  
+  .workout-card-title {
+    font-size: 18px;
+  }
+  
+  .workout-card-stats {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .day-workouts-list {
+    gap: 16px;
+  }
+  
+  .day-workout-card {
+    padding: 20px;
+  }
+}
+
+
+/* Week/Month/Year Views - Responsive SVG */
+@media (min-width: 640px) {
+  .workout-check,
+  .workout-pending {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .workout-sport-badge {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .workout-sport-badge svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .workout-indicator {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .workout-indicator svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .year-stat-icon {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .year-stat-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .day-empty svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .workout-check,
+  .workout-pending {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .workout-sport-badge {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .workout-sport-badge svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .year-stat-icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .year-stat-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .day-empty {
+    padding: 28px 12px;
+  }
+  
+  .day-empty svg {
+    width: 28px;
+    height: 28px;
+  }
+}

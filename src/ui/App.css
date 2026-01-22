@@ -1,0 +1,59 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg);
+  position: relative;
+}
+
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 80px; /* Espacio para el bottom nav en mobile */
+  width: 100%;
+}
+
+/* Scroll styling */
+.app-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.app-main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.app-main::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.app-main::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .app-main {
+    padding-bottom: 90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app {
+    flex-direction: row;
+  }
+  
+  .app-main {
+    margin-left: 280px; /* Ancho del sidebar expandido */
+    padding-bottom: 0;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Ajuste cuando el sidebar está colapsado */
+  .sidebar-collapsed ~ .app-main {
+    margin-left: 80px;
+  }
+}
