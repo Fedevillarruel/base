@@ -84,6 +84,14 @@
   justify-content: center;
   margin: 0 auto 20px;
   font-size: 36px;
+  overflow: hidden;
+  padding: 8px;
+}
+
+.demo-modal-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .demo-modal-title {

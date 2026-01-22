@@ -27,7 +27,11 @@ export function DemoModal() {
         
         <div className="demo-modal-header">
           <div className="demo-modal-icon">
-            <span>ℹ️</span>
+            <img 
+              src="https://jtujtceemarxedagazge.supabase.co/storage/v1/object/public/business-photos/app-icon-logos/logo3.png" 
+              alt="BASE Logo"
+              className="demo-modal-logo"
+            />
           </div>
           <h2 className="demo-modal-title">
             ✨ Versión Demo del Proyecto
