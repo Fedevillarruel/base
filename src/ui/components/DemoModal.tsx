@@ -34,7 +34,7 @@ export function DemoModal() {
             />
           </div>
           <h2 className="demo-modal-title">
-            ✨ Versión Demo del Proyecto
+            ✨ Versión Demo del Proyecto Base
           </h2>
         </div>
 
