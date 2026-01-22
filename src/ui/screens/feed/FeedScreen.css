@@ -7,6 +7,10 @@
   padding: 20px;
 }
 
+.vStack:first-child {
+  padding-top: 28px;
+}
+
 .helper {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
